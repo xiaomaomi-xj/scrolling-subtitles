@@ -1,0 +1,193 @@
+.start-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(32, 190, 32);
+    width: 100%;
+    height: 100%;
+    z-index: 111;
+    transition: all 0.5s;
+    opacity: 1;
+}
+
+.start-box-header {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.start-box-header-img {
+    width: 130px;
+    height: 130px;
+    background-image: url('../src/header.png');
+    background-size: 100%;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.start-box-header-text {
+    font-size: 35px;
+    margin-top: 20px;
+    font-weight: bolder;
+    color: azure;
+}
+
+.start-box-header-content {
+    color: #ffffffcc;
+    width: 300px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.start-box-footer {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-box {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+}
+
+@property --loading {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.loading-box-bg {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--loading), transparent 0%, transparent 25%, #ffffff 50%);
+    animation: loadingAnimate 3s linear 0s infinite normal none;
+}
+
+.loading-box-mask {
+    width: 80%;
+    height: 80%;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+@keyframes loadingAnimate {
+    from {
+        --loading: 0deg;
+    }
+
+    to {
+        --loading: 360deg;
+    }
+}
+
+.loading-box::after {
+    content: attr(data-text);
+    position: absolute;
+    color: #ffffff;
+    bottom: -30px;
+    font-size: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.enter-btn-box {
+    letter-spacing: 10px;
+    padding: 10px 30px;
+    font-weight: bolder;
+    background-color: #fff;
+    color: rgb(32, 190, 32);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.alert-box {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: all .5s;
+    opacity: 0;
+}
+
+.alert-box-content {
+    width: 70%;
+    background-color: #181717;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.alert-box-header {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.1em;
+}
+
+.alert-box-body {
+    width: 100%;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.alert-box-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+.alert-box-btn {
+    padding: 5px 20px;
+    background-color: #383535;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.alert-box-btn:hover {
+    background-color: #635d5d;
+}
+
+.load-box{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.87);
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: all .5s;
+    opacity: 0;
+}

@@ -1,0 +1,346 @@
+:root {
+    --green: rgb(32, 190, 32);
+    --bg-color: #f5f5f5;
+    --disble-color: #9b9b9b;
+}
+
+.tool-box {
+    background-color: var(--bg-color);
+    width: 96%;
+    margin-left: 2%;
+    height: calc(100vh - 290px);
+    margin-top: 20px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.747);
+    position: relative;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.tool-module-box {
+    padding: 5px;
+    padding-top: 15px;
+    border: 1px solid var(--green);
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 3px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.tool-module-box::after {
+    position: absolute;
+    left: 10px;
+    top: -14px;
+    color: #fff;
+    content: attr(data-title);
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: var(--green);
+    border-radius: 50%;
+}
+
+
+.small-module-box {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid var(--green);
+    cursor: pointer;
+    border-radius: 2px;
+    position: relative;
+}
+
+.small-module-box.check {
+    background-color: var(--green);
+    color: white;
+}
+
+.middle-module-box {
+    margin-top: 15px;
+    width: 48%;
+    border: 1px solid var(--green);
+    padding-top: 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.middle-module-box::after {
+    content: attr(data-title);
+    position: absolute;
+    font-size: 12px;
+    background-color: var(--green);
+    color: #fff;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1px;
+    border-radius: 2px;
+}
+
+.max-module-box {
+    width: 98%;
+    border: 1px solid var(--green);
+    margin-top: 15px;
+    padding-top: 15px;
+    position: relative;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.max-module-box::after {
+    content: attr(data-title);
+    position: absolute;
+    font-size: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -8px;
+    background-color: var(--green);
+    color: #fff;
+    padding: 1px;
+    border-radius: 2px;
+}
+
+.module-box-mark {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: calc(80px * var(--index));
+    top: -10px;
+    background-color: var(--green);
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.module-box-mark::after {
+    content: attr(data-text);
+    position: absolute;
+    display: block;
+    min-width: 60px;
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--green);
+    left: -53px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.input-box {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid var(--green);
+    padding: 10px;
+    padding-top: 20px;
+    border-radius: 3px;
+    position: relative;
+    margin-top: 15px;
+}
+
+.input-box::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 10px;
+    top: -12px;
+    background-color: var(--green);
+    color: #fff;
+    padding: 0px 5px;
+    border-radius: 50%;
+}
+
+.input-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    background-color: transparent;
+}
+
+.btns-box {
+    width: 100%;
+    position: sticky;
+    bottom: -4px;
+    border: 1px solid var(--green);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    margin-top: 80px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 4px 2px rgba(4, 121, 0, 0.397);
+    background-color: var(--bg-color);
+}
+
+.btns-box .btn {
+    padding: 7px 15px;
+    background-color: var(--green);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.run-btn {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: var(--green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.run-btn::after {
+    content: '';
+    position: absolute;
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+    border-left: 20px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    box-sizing: border-box;
+}
+
+.btns-box-mark {
+    position: absolute;
+    top: -10px;
+    left: calc(var(--position));
+    width: 20px;
+    height: 20px;
+    background-color: var(--green);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateX(-50%);
+}
+
+.btns-box-mark::after {
+    content: attr(data-text);
+    position: absolute;
+    display: block;
+    min-width: 60px;
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--green);
+    left: -53px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.color-input-box {
+    margin: 5px;
+    display: flex;
+    padding: 5px;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid var(--green);
+}
+
+.color-box {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    margin-right: 10px;
+    border-radius: 3px;
+    border: 1px solid var(--green);
+}
+
+.input-btn {
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green);
+    color: #fff;
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.input-btn.disble {
+    background-color: var(--disble-color);
+    color: #3d3d3d;
+}
+
+.number-input-box {
+    display: flex;
+    padding: 5px;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid var(--green);
+    margin: 5px;
+}
+
+.number-input-box>.number-input {
+    padding: 2px;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee;
+    border-top: 1px solid var(--green);
+    border-bottom: 1px solid var(--green);
+    border-radius: 2px;
+}
+
+.switch-box {
+    width: 65px;
+    border-radius: 40px;
+    height: 34px;
+    background-color: var(--green);
+    cursor: pointer;
+    transition: all .5s;
+    position: relative;
+    margin: 8px;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all .3s;
+}
+
+.switch-btn-box {
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateX(37px);
+    transition: all .3s;
+}
+
+.switch-box.off {
+    background-color: var(--disble-color);
+}
+
+.switch-box.off .switch-btn-box {
+    transform: translateX(-1px);
+}

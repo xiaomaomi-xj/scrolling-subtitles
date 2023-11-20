@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/component.css">
+    <link rel="stylesheet" href="./css/tool.css">
+    <script src="./js/Utils.js"></script>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <title>在线手持全屏滚动字幕</title>
+</head>
+
+<body>
+    <main>
+        <div class="start-box" id="cover-box">
+            <div class="start-box-header">
+                <div class="start-box-header-img"></div>
+                <div class="start-box-header-text">全屏滚动字幕</div>
+                <div class="start-box-header-content">适用于搭讪、机场接机、接人、演唱会、寻人、赛场助威、地铁搭讪等等...</div>
+                <p style="color: rgb(255, 0, 0);margin-top: 20px;font-size: 13px;">注：使用前请把手机方向锁定(关闭自动旋转屏幕)</p>
+            </div>
+            <div class="start-box-footer">
+                <div class="loading-box" data-text="加载资源中...请耐心等待">
+                    <div class="loading-box-bg">
+                        <div class="loading-box-mask"></div>
+                    </div>
+                </div>
+                <div class="enter-btn-box" style="display: none;">
+                    开始使用
+                </div>
+            </div>
+        </div>
+        <div class="load-box" style="display: none;">
+            <div class="loading-box" data-text="加载中...">
+                <div class="loading-box-bg">
+                    <div class="loading-box-mask"></div>
+                </div>
+            </div>
+        </div>
+        <div class="alert-box" style="display: none;" id="alert-box">
+            <div class="alert-box-content">
+                <div class="alert-box-header">提示</div>
+                <div class="alert-box-body"></div>
+                <div class="alert-box-footer">
+                    <div class="alert-box-btn">确认</div>
+                </div>
+            </div>
+        </div>
+        <div class="box" id="main">
+            <div class="bg-box">
+                <div class="surround-box">
+                    <div class="surround-mask-box">
+                        <div class="rotate-box">
+                            <div class="text-box">
+                                <span style="--i:1;">我</span>
+                                <span style="--i:2;">是</span>
+                                <span style="--i:3;">弹</span>
+                                <span style="--i:4;">幕</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tool-box">
+            <div class="input-box" data-title="文本内容" id="text-input-box">
+                <input type="text" value="我是弹幕" placeholder="请输入文字内容...">
+            </div>
+            <div class="tool-module-box" data-title="第三方字体" id="font-module-box">
+                <div class="module-box-mark" style="--index:0" data-text="自定义">?</div>
+                <div class="small-module-box check">跟随系统</div>
+                <div class="small-module-box">拼音</div>
+                <div class="small-module-box">小布丁</div>
+                <div class="small-module-box">初恋</div>
+                <div class="small-module-box">粉笔</div>
+                <div class="small-module-box">童心</div>
+                <div class="small-module-box">非主流</div>
+                <div class="small-module-box">粗体</div>
+                <div class="small-module-box">毛泽东</div>
+                <div class="small-module-box">自定义<input type="file" style="display: none;"></div>
+            </div>
+            <div class="tool-module-box" data-title="模式" id="font-mode-box">
+                <div class="module-box-mark" style="--index:0" data-text="特别说明">!</div>
+                <div class="module-box-mark" style="--index:1" data-text="作者说明">?</div>
+                <div class="small-module-box check">普通</div>
+                <div class="small-module-box">抖音同款</div>
+                <div class="small-module-box">彩色体</div>
+                <div class="small-module-box">发光体</div>
+                <div class="small-module-box">霓虹灯</div>
+            </div>
+            <div class="tool-module-box" data-title="自定义样式" id="custom-module-box">
+                <div class="module-box-mark" style="--index:2" data-text="所需时间">?</div>
+                <div class="module-box-mark" style="--index:1" data-text="字体大小">?</div>
+                <div class="module-box-mark" style="--index:0" data-text="环绕颜色">?</div>
+                <div class="middle-module-box" data-title="字体滚动">
+                    <div class="switch-box">
+                        <div class="switch-btn-box"></div>
+                    </div>
+                </div>
+                <div class="middle-module-box" data-title="环绕控制" id="surround-switch">
+                    <div class="switch-box off">
+                        <div class="switch-btn-box"></div>
+                    </div>
+                </div>
+                <div class="middle-module-box" data-title="滚动所需时间">
+                    <div class="number-input-box">
+                        <div class="input-btn bold">-</div>
+                        <div class="number-input">10</div>
+                        <div class="input-btn bold">+</div>
+                    </div>
+                </div>
+                <div class="middle-module-box" data-title="环绕所需时间">
+                    <div class="number-input-box">
+                        <div class="input-btn bold">-</div>
+                        <div class="number-input">5</div>
+                        <div class="input-btn bold">+</div>
+                    </div>
+                </div>
+                <div class="middle-module-box" data-title="字体大小">
+                    <div class="number-input-box">
+                        <div class="input-btn bold">-</div>
+                        <div class="number-input">130</div>
+                        <div class="input-btn bold">+</div>
+                    </div>
+                </div>
+                <div class="middle-module-box" data-title="字体颜色">
+                    <div class="color-input-box">
+                        <div class="color-box" style="background-color: #ffffff;"></div>
+                        <input type="color" style="display: none;" value="#ffffff">
+                        <div class="input-btn">选择颜色</div>
+                    </div>
+                </div>
+                <div class="middle-module-box" data-title="发光颜色">
+                    <div class="color-input-box">
+                        <div class="color-box" style="background-color: #fd2dbf;"></div>
+                        <input type="color" style="display: none;" value="#fd2dbf">
+                        <div class="input-btn">选择颜色</div>
+                    </div>
+                </div>
+                <div class="middle-module-box" data-title="背景颜色">
+                    <div class="color-input-box">
+                        <div class="color-box" style="background-color: #000000;"></div>
+                        <input type="color" style="display: none;" value="#000000">
+                        <div class="input-btn">选择颜色</div>
+                    </div>
+                </div>
+                <div class="max-module-box" data-title="字体粗细控制" id="font-bold-box">
+                    <div class="small-module-box">一级</div>
+                    <div class="small-module-box">二级</div>
+                    <div class="small-module-box">三级</div>
+                    <div class="small-module-box check">四级</div>
+                    <div class="small-module-box">五级</div>
+                    <div class="small-module-box">六级</div>
+                    <div class="small-module-box">七级</div>
+                    <div class="small-module-box">八级</div>
+                    <div class="small-module-box">九级</div>
+                </div>
+                <div class="max-module-box" data-title="环绕颜色" id="surround-color-box">
+                    <div class="color-input-box">
+                        <div class="color-box" style="background-color: #ff0659;"></div>
+                        <input type="color" style="display: none;" value="#ff0659">
+                        <div class="input-btn">选择颜色</div>
+                    </div>
+                    <div class="color-input-box">
+                        <div class="color-box" style="background-color: #45f3ff;"></div>
+                        <input type="color" style="display: none;" value="#45f3ff">
+                        <div class="input-btn">选择颜色</div>
+                    </div>
+                    <div class="input-btn bold">+</div>
+                </div>
+            </div>
+            <div class="btns-box">
+                <div class="module-box-mark" style="--index:2" data-text="上传">?</div>
+                <div class="module-box-mark" style="--index:1" data-text="如何关闭">?</div>
+                <div class="module-box-mark" style="--index:0" data-text="下载">?</div>
+                <input type="file" style="display: none;">
+                <div class="btn" id="upload-btn">上传</div>
+                <div class="run-btn"></div>
+                <div class="btn" id="download-btn">下载</div>
+            </div>
+        </div>
+    </main>
+    <script src="./js/component.js"></script>
+    <script src="./js/loadFont.js"></script>
+    <script src="./js/fullScreen.js"></script>
+    <script src="./js/handlePrompt.js"></script>
+    <script src="./js/handleInText.js"></script>
+    <script src="./js/moduleControll.js"></script>
+    <script src="./js/customStyleControll.js"></script>
+    <script src="./js/md5.js"></script>
+    <script src="./js/sign.js"></script>
+    <script src="./js/importWithExport.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            //加载完毕,显示进入按钮
+            document.fonts.ready.then(() => {
+                setTimeout(() => {
+                    loadComplete();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
